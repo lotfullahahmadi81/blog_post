@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -11,7 +12,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.posts.index');
     }
 
     /**
@@ -19,7 +20,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.posts.create');
     }
 
     /**
