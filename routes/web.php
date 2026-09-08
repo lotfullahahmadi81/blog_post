@@ -4,8 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('frontend.home.index');
+})->name('home');
+
+Route::get('/about', function () {
+    return view('frontend.about.index');
+})->name('about');
 
 Route::get('/dashboard', function () {
     return view('backend.dashboard.index');
