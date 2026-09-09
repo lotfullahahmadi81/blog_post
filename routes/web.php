@@ -22,4 +22,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], function () {
+     \UniSharp\LaravelFilemanager\Lfm::routes();
+ });
+
 require __DIR__ . '/auth.php';
