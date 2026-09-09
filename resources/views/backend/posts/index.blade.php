@@ -13,9 +13,22 @@
                             <th>NO</th>
                             <th>Title</th>
                             <th>SubTitle</th>
-                            <th>Description</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
+                    @foreach ($posts as $post)
+                        <tbody>
+                            <tr>
+                                <td>{{ $post->id }}</td>
+                                <td>{{ $post->title }}</td>
+                                <td>{{ $post->sub_title }}</td>
+                                <td>
+                                    <a href="{{route('posts.edit',[$post->id])}}" class="mx-2"><i class="fa fa-edit"></i></a>
+                                    <a href="" class="mx-2"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>
