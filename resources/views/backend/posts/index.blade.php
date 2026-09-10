@@ -7,7 +7,7 @@
             <h5 class="card-header">Posts <a href="{{ route('posts.create') }}" class="btn btn-primary float-right">Create
                     Post</a></h5>
             <div class="card-body">
-                <table class="table">
+                <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th>NO</th>
@@ -23,15 +23,80 @@
                                 <td>{{ $post->title }}</td>
                                 <td>{{ $post->sub_title }}</td>
                                 <td>
-                                    <a href="{{route('posts.edit',[$post->id])}}" class="mx-2"><i class="fa fa-edit"></i></a>
-                                    <a href="" class="mx-2"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ route('posts.edit', [$post->id]) }}" class="mx-2"><i
+                                            class="fa fa-edit"></i></a>
+                                    <a href="#" class="mx-2 delete" id="{{ $post->id }}"><i
+                                            class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
                     @endforeach
+                    <tfoot>
+                        {{ $posts->links() }}
+                    </tfoot>
                 </table>
             </div>
         </div>
     </div>
     <!-- /.container-fluid -->
+@endsection
+
+
+@section('script')
+    <script>
+        $('.delete').click(function(e) {
+            e.preventDefault();
+
+            var id = $(this).attr('id');
+            var url = '/posts/' + id;
+
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+
+                if (result.isConfirmed) {
+
+                    $.ajax({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
+                        url: url,
+                        type: 'DELETE',
+                        dataType: 'json',
+
+                        success: function(data) {
+
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Post has been deleted.",
+                                icon: "success"
+                            }).then(() => {
+                                location.reload();
+                            });
+
+                        },
+
+                        error: function(xhr) {
+                            console.log(xhr.responseText);
+
+                            Swal.fire({
+                                title: "Error!",
+                                text: "Something went wrong.",
+                                icon: "error"
+                            });
+                        }
+                    });
+
+                }
+
+            });
+        });
+    </script>
 @endsection

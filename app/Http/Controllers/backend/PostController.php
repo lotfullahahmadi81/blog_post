@@ -43,6 +43,7 @@ class PostController extends Controller
             'description' => $request->description,
             'slug' => Str::slug($request->title)
         ]);
+        Session()->flash('success','Post created successfully');
         return redirect()->route('posts.index');
     }
 
@@ -80,6 +81,7 @@ class PostController extends Controller
         $post->slug = Str::slug($request->title);
 
         $post->save();
+        Session()->flash('success','Post updated successfully');
         return redirect()->route('posts.index');
 
     }
@@ -87,8 +89,13 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
-    }
+   public function destroy(Post $post)
+{
+    $post->delete();
+
+    return response()->json([
+        'success' => true,
+        'message' => 'Post deleted successfully.'
+    ]);
+}
 }
