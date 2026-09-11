@@ -6,23 +6,23 @@
         <div class="card">
             <h5 class="card-header">About</h5>
             <div class="card-body">
-                <form action="{{route('about.store')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('about.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" id="title" value="{{$about->title}}" placeholder="Enter about title ..."
-                            class="form-control">
+                        <input type="text" name="title" id="title" value="{{ $about->title }}"
+                            placeholder="Enter about title ..." class="form-control">
                     </div>
                     @error('title')
-                        <p class="text-danger m-1">{{$message}}</p>
+                        <p class="text-danger m-1">{{ $message }}</p>
                     @enderror
                     <div class="form-group">
                         <label for="subtitle">SubTitle</label>
-                        <input type="text" name="subtitle" id="subtitle" value="{{$about->sub_title}}" placeholder="Enter about subtitle ..."
-                            class="form-control">
+                        <input type="text" name="subtitle" id="subtitle" value="{{ $about->sub_title }}"
+                            placeholder="Enter about subtitle ..." class="form-control">
                     </div>
                     @error('subtitle')
-                        <p class="text-danger m-1">{{$message}}</p>
+                        <p class="text-danger m-1">{{ $message }}</p>
                     @enderror
                     <div class="form-group">
                         <label for="description">Description</label>
@@ -30,9 +30,9 @@
                             rows="10">@php echo $about->description @endphp</textarea>
                     </div>
                     @error('description')
-                        <p class="text-danger m-1">{{$message}}</p>
+                        <p class="text-danger m-1">{{ $message }}</p>
                     @enderror
-                    <button type="submit" class="btn btn-primary">Create Post</button>
+                    <button type="submit" class="btn btn-primary">Save About</button>
                 </form>
             </div>
         </div>

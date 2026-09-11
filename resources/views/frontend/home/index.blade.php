@@ -1,6 +1,13 @@
 @extends('frontend.layout.master')
 @section('content')
     <!-- Page Header-->
+    <style>
+        img,
+        svg {
+            vertical-align: middle;
+            width: 20px;
+        }
+    </style>
     <header class="masthead" style="background-image: url('{{ asset('frontend/assets/img/home-bg.jpg') }}')">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -20,7 +27,7 @@
                 @foreach ($posts as $post)
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="{{route('post.show', $post->slug)}}">
+                        <a href="{{ route('post.show', $post->slug) }}">
                             <h2 class="post-title">{{ $post->title }}</h2>
                             <h3 class="post-subtitle">{{ $post->sub_title }}</h3>
                         </a>

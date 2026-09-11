@@ -21,13 +21,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('frontend/css/styles.css') }}" rel="stylesheet" />
-    <style>
-        img,
-        svg {
-            vertical-align: middle;
-            width: 20px;
-        }
-    </style>
+    
 </head>
 
 <body>
