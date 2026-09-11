@@ -51,6 +51,14 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Posts</span></a>
             </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('about.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>About</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
         </ul>
