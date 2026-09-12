@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -15,7 +16,8 @@ class PostController extends Controller
     public function index()
     {
         return view('backend.posts.index')
-        ->with('posts',Post::paginate(10));
+        ->with('posts',Post::paginate(10))
+        ->with('setting',Setting::first());
     }
 
     /**

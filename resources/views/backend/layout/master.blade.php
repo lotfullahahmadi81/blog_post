@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3"> Admin </div>
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -58,6 +58,14 @@
                 <a class="nav-link" href="{{ route('about.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>About</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('setting.index') }}">
+                    <i class="fas fa-fw fa-setting"></i>
+                    <span>Setting</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">

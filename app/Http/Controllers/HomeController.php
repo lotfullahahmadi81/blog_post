@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,6 +15,7 @@ class HomeController extends Controller
 
     public function show($slug){
         $post = Post::where('slug', $slug)->first();
-        return view('frontend.home.show')->with('post', $post);
+        return view('frontend.home.show')
+        ->with('post', $post);
     }
 }

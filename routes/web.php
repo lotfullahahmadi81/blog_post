@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\AboutController as BackendController;
 use App\Http\Controllers\AboutController as FrontendController;
 use App\Http\Controllers\backend\PostController;
+use App\Http\Controllers\backend\SettingController as BackendSettingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -27,6 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('admin/about', [BackendController::class, 'index'])->name('about.index');
     Route::post('admin/about', [BackendController::class, 'store'])->name('about.store');
+    Route::get('admin/setting', [BackendSettingController::class, 'index'])->name('setting.index');
+    Route::post('admin/setting', [BackendSettingController::class, 'update'])->name('setting.update');
 });
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['auth']], function () {
