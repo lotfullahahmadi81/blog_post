@@ -34,7 +34,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"> Admin </div>
+                <div class="sidebar-brand-text mx-3"> {{ __('language.adminPanel') }} </div>
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -42,14 +42,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>{{ __('language.dashboard') }}</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('posts.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Posts</span></a>
+                    <span>{{ __('language.posts') }}</span></a>
             </li>
 
             <!-- Divider -->
@@ -57,15 +57,25 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('about.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>About</span></a>
+                    <span>{{ __('language.about') }}</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('setting.index') }}">
-                    <i class="fas fa-fw fa-setting"></i>
-                    <span>Setting</span></a>
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('language.settings') }}</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <li class="nav-item">
+                <ul class="nav-link">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('language.language') }}</span>
+                    <li><a class="dropdown-item text-white" href="{{ route('locale.switch', 'en') }}">English</a></li>
+                    <li><a class="dropdown-item text-white" href="{{ route('locale.switch', 'fa') }}">دری</a></li>
+                </ul>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -88,7 +98,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Lotfullah Khan</span>
                                 <img class="img-profile rounded-circle"
                                     src="{{ asset('backend/img/undraw_profile.svg') }}">
                             </a>
@@ -136,26 +146,9 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+
     @yield('script')
+    
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

@@ -15,7 +15,16 @@ Route::get('/post/{slug}', [HomeController::class, 'show'])->name('post.show');
 
 Route::get('/about', [FrontendController::class, 'index'])->name('about');
 
-Route::get('/contact',[ContactController::class,'index'])->name('contact');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::get('/locale/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    if (!in_array($locale, ['en', 'fa'])) {
+        abort(404);
+    }
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->name('locale.switch');
 
 
 Route::middleware('auth')->group(function () {

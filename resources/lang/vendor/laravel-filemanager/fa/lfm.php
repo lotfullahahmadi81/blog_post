@@ -7,7 +7,7 @@ return [
     'nav-thumbnails'    => 'تصویرک ها',
     'nav-list'          => 'لیست',
     'nav-sort'          => 'مرتب سازی',
-    'nav-sort-alphabetic'=> 'مرتب سازی الفبایی',
+    'nav-sort-alphabetic' => 'مرتب سازی الفبایی',
     'nav-sort-time'     => 'مرتب سازی زمانی',
 
     'menu-rename'       => 'تغییر نام',
@@ -47,11 +47,11 @@ return [
     'error-file-empty'  => 'باید یک فایل انتخاب کنید!',
     'error-file-exist'  => 'فایلی با این نام از قبل وجود دارد!',
     'error-file-size'   => 'محدودیت حجم فایل سرور! (حداکثر حجم: :max)',
-    'error-delete-folder'=> 'به دلیل خالی نبودن پوشه امکان حذف آن وجود ندارد!',
+    'error-delete-folder' => 'به دلیل خالی نبودن پوشه امکان حذف آن وجود ندارد!',
     'error-folder-name' => 'نام پوشه نمی تواند خالی باشد!',
-    'error-folder-exist'=> 'پوشه ای با این نام از قبل وجود دارد!',
-    'error-folder-alnum'=> 'فقط اسامی الفبایی برای پوشه مجاز است!',
-    'error-folder-not-found'=> 'پوشه‌ای یافت نشد! (:folder)',
+    'error-folder-exist' => 'پوشه ای با این نام از قبل وجود دارد!',
+    'error-folder-alnum' => 'فقط اسامی الفبایی برای پوشه مجاز است!',
+    'error-folder-not-found' => 'پوشه‌ای یافت نشد! (:folder)',
     'error-mime'        => 'پسوند غیرمجاز: ',
     'error-size'        => 'سایز بیش از حد:',
     'error-instance'    => 'فایل آپلود شده باید نمونه ای از UploadedFile باشد',
@@ -82,6 +82,11 @@ return [
     'resize-old-width'  => 'عرض اصلی:',
     'resize-new-height' => 'ارتفاع:',
     'resize-new-width'  => 'عرض:',
+
+    'home' => 'صفحه اصلی',
+    'about' => 'درباره ما',
+    'contact' => 'تماس با ما',
+    'language' => 'تغیر زبان',
 
     'locale-bootbox'    => 'fa',
 ];

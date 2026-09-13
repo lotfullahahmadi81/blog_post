@@ -28,7 +28,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a class="navbar-brand" href="index.html">Post Blog</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
@@ -36,12 +36,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('home') }}">Home</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ route('about') }}">About</a>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ route('home') }}">{{ __('language.home') }}</a>
                     </li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{{ route('contact') }}">Contact</a></li>
+                            href="{{ route('about') }}">{{ __('language.about') }}</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ route('contact') }}">{{ __('language.contact') }}</a></li>
+                    <li>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                {{ __('language.language') }}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="{{ route('locale.switch', 'en') }}">English</a></li>
+                                <li><a class="dropdown-item" href="{{ route('locale.switch', 'fa') }}">دری</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -79,7 +93,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                    <div class="small text-center text-muted fst-italic">{{ __('language.copyright') }} &copy; Post Blog 2026</div>
                 </div>
             </div>
         </div>

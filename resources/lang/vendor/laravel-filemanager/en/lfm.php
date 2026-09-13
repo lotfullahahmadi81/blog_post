@@ -82,4 +82,9 @@ return [
     'resize-old-width'  => 'Original Width:',
     'resize-new-height' => 'Height:',
     'resize-new-width'  => 'Width:',
+
+    'home'=>'Home',
+    'about' => 'About',
+    'contact' => 'Contact',
+    'language' => 'Language'
 ];

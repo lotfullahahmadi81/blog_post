@@ -10,10 +10,10 @@
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
-                            <th>NO</th>
-                            <th>Title</th>
-                            <th>SubTitle</th>
-                            <th>Action</th>
+                            <th>{{ __('language.no') }}</th>
+                            <th>{{ __('language.title') }}</th>
+                            <th>{{ __('language.sbutitle') }}</th>
+                            <th>{{ __('language.action') }}</th>
                         </tr>
                     </thead>
                     @foreach ($posts as $post)
@@ -51,14 +51,14 @@
             var url = '/posts/' + id;
 
             Swal.fire({
-                title: "Are you sure?",
-                text: "You won't be able to revert this!",
+                title: "{{ __('language.areYouSure') }}",
+                text: "{{ __('language.youWontBeAbleToRevertThis') }}",
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#3085d6",
                 cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, delete it!",
-                cancelButtonText: "Cancel"
+                confirmButtonText: "{{ __('language.deletePost') }}",
+                cancelButtonText: "{{ __('language.cancel') }}"
             }).then((result) => {
 
                 if (result.isConfirmed) {
@@ -74,8 +74,8 @@
                         success: function(data) {
 
                             Swal.fire({
-                                title: "Deleted!",
-                                text: "Post has been deleted.",
+                                title: "{{ __('language.deleted') }}",
+                                text: "{{ __('language.postHasBeenDeleted') }}",
                                 icon: "success"
                             }).then(() => {
                                 location.reload();
