@@ -66,4 +66,17 @@ return [
     'phonePlaceholder' => 'Enter Phone...',
     'addressPlaceholder' => 'Enter Address...',
 
+    // users
+    'users' => 'Users',
+    'createUser' => 'Create User',
+    'editUser' => 'Edit User',
+    'userNamePlaceholder' => 'Enter User Name...',
+    'userEmailPlaceholder' => 'Enter User Email...',
+    'userPasswordPlaceholder' => 'Enter User Password...',
+    'userPasswordConfirmationPlaceholder' => 'Enter User Password Confirmation...',
+    'username' => 'User Name',
+    'password' => 'Password',
+    'confirmationPassword' => 'Confirm your Password',
+    'profilePicture' => 'Profile Picture',
+    'chooseProfilePicture' => 'Choose Profile Picture',
 ];

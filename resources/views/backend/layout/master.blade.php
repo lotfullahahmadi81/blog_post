@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>SB Admin 2 - Blank</title>
+    <title>Admin Dashboard</title>
     <!-- Custom fonts for this template-->
     <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link
@@ -47,11 +47,17 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
+                <a class="nav-link" href="{{ route('users.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('language.users') }}</span></a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <li class="nav-item">
                 <a class="nav-link" href="{{ route('posts.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>{{ __('language.posts') }}</span></a>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider">
             <li class="nav-item">
@@ -148,7 +154,7 @@
     </a>
 
     @yield('script')
-    
+
     <!-- Bootstrap core JavaScript-->
     <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

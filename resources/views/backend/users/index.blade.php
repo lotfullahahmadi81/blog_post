@@ -4,35 +4,37 @@
     <!-- Begin Page Content -->
     <div class="container-fluid">
         <div class="card">
-            <h5 class="card-header">{{ __('language.posts') }} <a href="{{ route('posts.create') }}" class="btn btn-primary float-right">Create
-                    Post</a></h5>
+            <h5 class="card-header">{{ __('language.users') }} <a href="{{ route('users.create') }}"
+                    class="btn btn-primary float-right">{{ __('language.createUser') }}</a></h5>
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead class="thead-dark">
                         <tr>
                             <th>{{ __('language.no') }}</th>
-                            <th>{{ __('language.title') }}</th>
-                            <th>{{ __('language.sbutitle') }}</th>
+                            <th>{{ __('language.username') }}</th>
+                            <th>{{ __('language.email') }}</th>
+                            <th>{{ __('language.profilePicture') }}</th>
                             <th>{{ __('language.action') }}</th>
                         </tr>
                     </thead>
-                    @foreach ($posts as $post)
+                    @foreach ($users as $user)
                         <tbody>
                             <tr>
-                                <td>{{ $post->id }}</td>
-                                <td>{{ $post->title }}</td>
-                                <td>{{ $post->sub_title }}</td>
+                                <td>{{ $user->id }}</td>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->profile->profile_picture }}</td>
                                 <td>
-                                    <a href="{{ route('posts.edit', [$post->id]) }}" class="mx-2"><i
+                                    <a href="{{ route('users.edit', [$user->id]) }}" class="mx-2"><i
                                             class="fa fa-edit"></i></a>
-                                    <a href="#" class="mx-2 delete" id="{{ $post->id }}"><i
+                                    <a href="#" class="mx-2 delete" id="{{ $user->id }}"><i
                                             class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
                     @endforeach
                     <tfoot>
-                        {{ $posts->links() }}
+                        {{ $users->links() }}
                     </tfoot>
                 </table>
             </div>
@@ -48,7 +50,7 @@
             e.preventDefault();
 
             var id = $(this).attr('id');
-            var url = '/posts/' + id;
+            var url = '/users/' + id;
 
             Swal.fire({
                 title: "{{ __('language.areYouSure') }}",

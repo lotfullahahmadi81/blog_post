@@ -64,4 +64,18 @@ return [
     'instagramPlaceholder' => 'URL اینستاگرام را وارد کنید...',
     'phonePlaceholder' => 'تلفن را وارد کنید...',
     'addressPlaceholder' => 'آدرس را وارد کنید...',
+
+    // users
+    'users' => 'کاربران',
+    'createUser' => 'ایجاد کاربر',
+    'editUser' => 'ویرایش کاربر',
+    'userNamePlaceholder' => 'نام کاربری را وارد کنید...',
+    'userEmailPlaceholder' => 'ایمیل کاربر را وارد کنید...',
+    'userPasswordPlaceholder' => 'رمز عبور کاربر را وارد کنید...',
+    'userPasswordConfirmationPlaceholder' => 'تکرار رمز عبور کاربر را وارد کنید...',
+    'username' => 'نام کاربری',
+    'password' => 'رمز عبور',
+    'confirmationPassword' => 'تکرار رمز عبور',
+    'profilePicture' => 'تصویر پروفایل',
+    'chooseProfilePicture' => 'انتخاب تصویر پروفایل',
 ];
